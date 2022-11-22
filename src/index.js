@@ -1,7 +1,8 @@
 import { Auth0Provider } from '@auth0/auth0-react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+// import App from './App';
+import Home from './Components/Home';
 import Companies from './Components/Companies/table';
 import Roles from './Components/Roles/form';
 import People from './Components/People/form';
@@ -38,13 +39,13 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router = {router} />
-    
     <Auth0Provider
       domain={process.env.REACT_APP_AUTH0_DOMAIN}
       clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
       redirectUri={window.location.origin}
     >
+      <RouterProvider router={router} />
+      {/* <App /> */}
     </Auth0Provider>
   </React.StrictMode>
 );
