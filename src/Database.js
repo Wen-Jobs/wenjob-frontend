@@ -97,20 +97,6 @@ const Database = () => {
             <h1>Database</h1>
             <button onClick={addConnectionsData}>add new collection item</button>
             <button onClick={readConnectionsData}>add all connections items to state</button>
-            {data &&
-                <List
-                    itemLayout='horizontal'
-                    dataSource={data}
-                    renderItem={(item) => (
-                        <List.Item>
-                            <List.Item.Meta
-                                title={item.First}
-                                description={item.Position} />
-                        </List.Item>
-                    )}
-
-                />
-            }
 
             <Upload {...props} customRequest={handleFile}>
                 <Button icon={<UploadOutlined />}>Click to Upload</Button>
