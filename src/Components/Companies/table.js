@@ -90,7 +90,7 @@ const CompanyTable = () => {
 
     try {
       if (jobData) {
-        jobData.forEach(job => {
+        jobData.jobs.forEach(job => {
           let ref = doc(db, "jobs", job.key);
           batch.set(ref,
             {
@@ -146,6 +146,15 @@ const CompanyTable = () => {
         <Column title='Company' dataIndex='Company' key={Math.random()} />
         <Column title='Position' dataIndex='Position' key={Math.random()} />
         <Column title='Connected On' dataIndex='Connected On' key={Math.random()} />
+      </Table>
+
+      <Table dataSource={jobsData}>
+        <Column title='job' dataIndex='job' key={Math.random()} />
+        <Column title='company' dataIndex='company' key={Math.random()} />
+        <Column title='location' dataIndex='location' key={Math.random()} />
+        <Column title='post_date' dataIndex='post_date' key={Math.random()} />
+        <Column title='link' dataIndex='link' key={Math.random()} />
+        <Column title='tags' dataIndex='tags' key={Math.random()} />
       </Table>
     </>
   );
