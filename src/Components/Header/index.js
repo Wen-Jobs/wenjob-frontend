@@ -11,6 +11,8 @@ const headerStyle = {
   justifyContent: 'space-between',
   alignItems: 'center',
   height: '3rem',
+  paddingLeft: '1rem',
+  paddingRight: '1rem',
 }
 
 const titleStyle = {
@@ -28,7 +30,7 @@ function Header() {
 
   return (
     <header style={headerStyle}>
-      <Title level={2} style={titleStyle}>WenJobs</Title>
+      <Title level={3} style={titleStyle}>WenJobs</Title>
       <div style={userInfoStyle}>
       <Profile />
       {isAuthenticated ? <LogoutButton /> : <LoginButton />}

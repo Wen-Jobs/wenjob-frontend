@@ -30,6 +30,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
-// q: how do I undo a git add
-// a: git reset HEAD <file>

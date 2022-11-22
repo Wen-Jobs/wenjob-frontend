@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-<<<<<<< HEAD
+// import App from './App';
+import Home from './Components/Home';
 import Companies from './Components/Companies/table';
 import Roles from './Components/Roles/form';
 import People from './Components/People/form';
@@ -10,12 +10,13 @@ import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Home />,
     errorElement: <ErrorPage />
   },
   {
@@ -34,25 +35,17 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   }
 ]);
-=======
-import { Auth0Provider } from '@auth0/auth0-react';
->>>>>>> f0654f8ac9691121d28b2bdc32b19506afd75213
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-<<<<<<< HEAD
-    <RouterProvider router = {router} />
-      <App />
-    
-=======
     <Auth0Provider
       domain={process.env.REACT_APP_AUTH0_DOMAIN}
       clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
       redirectUri={window.location.origin}
     >
-      <App />
+      <RouterProvider router={router} />
+      {/* <App /> */}
     </Auth0Provider>
->>>>>>> f0654f8ac9691121d28b2bdc32b19506afd75213
   </React.StrictMode>
 );
