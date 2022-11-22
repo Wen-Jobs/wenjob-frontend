@@ -5,8 +5,6 @@ import {
   Slider, 
 } from 'antd';
 
-// import './style.css';
-
 function FormCompanies(){
 
   return (
