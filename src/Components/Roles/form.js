@@ -6,6 +6,7 @@ import {
   Checkbox,
   Select
 } from 'antd';
+import { Button } from 'antd';
 
 import './style.css'
 
@@ -26,7 +27,11 @@ const marks = {
 0: { style: { color: '#fff'}, label: '1'}, 
 100: { style: { color: '#fff'}, label: '5000'}}
 
-function RoleForm() {
+
+function RoleForm(props) {
+
+  const { getKeyword, applyFilter } = props;
+
   return (
     <div className='formWrapper'>
       <Form
@@ -38,8 +43,9 @@ function RoleForm() {
         }}
         layout="vertical"
       >
+        <Button onClick={applyFilter}>Apply</Button>
         <Form.Item label="General Keywords">
-          <Input />
+          <Input onChange={(e) => getKeyword(e.target.value)}/>
         </Form.Item>
         <Form.Item label="Role Category">
           <Input />

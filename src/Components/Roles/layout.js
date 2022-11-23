@@ -1,10 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Layout } from 'antd';
 import RoleTable from './table';
 import RoleForm from './form';
+
+
 const { Content } = Layout;
 
+// const initalParams = {
+//   keyword: '',
+// }
+
 function RolePageLayout() {
+
+  const [keyword, setKeyword] = useState();
+  const [filterParams, setFilterParams] = useState({});
+
+  const getKeyword = (e) => {
+    setKeyword(e);
+    console.log('keyword', keyword)
+  }
+
+  const applyFilter = () => {
+    if (keyword) {
+      setFilterParams({...filterParams, 
+        keyword: keyword
+      })
+    }
+  }
+
+  // const clearFilter = () => {
+  //   setFilterParams({
+  //     keyword: ''
+  //   });
+  // }
 
   return (
     <Layout>
@@ -19,8 +47,8 @@ function RolePageLayout() {
             }}
           >
             <div className='contentWrapper'>
-            <RoleForm />
-            <RoleTable />
+            <RoleForm getKeyword={getKeyword} applyFilter={applyFilter} />
+            <RoleTable filterParams={filterParams} />
             </div>
           </Content>
         </Layout>
