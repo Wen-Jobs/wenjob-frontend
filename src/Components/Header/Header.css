@@ -1,0 +1,86 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 425px) {
+  .header {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+}
+
+.title {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.user-info{
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .options {
+    max-width: 100%;
+  }
+}
+
+.linkButton {
+  /* box-shadow: inset 0px 1px 0px 0px #ffffff; */
+  /* background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%); */
+  background-color: #6c63ff;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  /* text-shadow: 0px 1px 0px #ffffff; */
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .linkButton {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 375px) {
+  .linkButton {
+    font-size: 0.75rem;
+    padding: 6px 6px;
+    margin-right: 2px;
+    margin-left: 2px;
+  }
+}
+
+.linkButton:hover {
+  /* background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%); */
+  color: rgb(185, 185, 185);
+}
+
+.linkButton:active {
+  position: relative;
+  top: 1px;
+}
+
+/* media query that positions the profile class in the top right corner of the screen on mobile */
+@media (max-width: 375px) {
+  .profile {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

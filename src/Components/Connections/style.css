@@ -1,0 +1,58 @@
+body {
+  background: rgb(127, 176, 208);
+  background: linear-gradient(
+    345deg,
+    rgba(127, 176, 208, 1) 0%,
+    rgba(204, 223, 255, 1) 51%,
+    rgba(245, 245, 245, 1) 100%
+  );
+  background-attachment: fixed;
+  /* height: 100vh; */
+} 
+
+
+ .connectionSider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 2rem 5.5rem 1rem;
+  /* padding: 1rem .5rem 1rem 2rem; */
+  border-radius: 8px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  max-height: 42vh;
+}
+
+.content {
+  margin: 2rem 1rem;
+}
+
+.layout {
+  border-radius: 20px;
+  background-color: rgba(184, 154, 169, 0.19);
+  height: 75vh;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 1.5rem;
+}
+
+.uploadChecklist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.35rem;
+}
+
+.uploadCSVButton {
+  margin-left: 1rem;
+  background-color: lightgray;
+}

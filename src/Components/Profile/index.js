@@ -8,7 +8,6 @@ const profileStyle = {
   display: 'flex',
   alignItems: 'center',
   marginRight: '1rem',
-  // backgroundColor: '#333',
 }
 
 const imgStyle = {
@@ -58,6 +57,7 @@ const Profile = () => {
   }
   useEffect(() => {
     createUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
 
   if (isLoading) {

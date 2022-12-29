@@ -1,74 +1,32 @@
-import { Typography, Image } from 'antd';
-import { useAuth0 } from "@auth0/auth0-react";
-// import { Button } from 'antd';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Typography, Image, Row, Col } from 'antd';
+
+import './LandingPage.css';
+import hero from './hero.svg'
 
 const { Title, Text } = Typography;
 
-const heroSection = {
-  display: 'flex',
-  alignItems: 'center',
-  paddingTop: '2rem',
-}
-
-const heroTextStyle = {
-  width: '30rem',
-  marginLeft: '5rem',
-  height: 'fit-content',
-  padding: '1rem',
-}
-
-const titleStyle = {
-  marginTop: '0',
-  fontSize: '4rem',
-}
-
-const textStyle = {
-  fontSize: '1.25rem',
-}
-
-const optionStyle = {
-  marginLeft: '6rem',
-}
-
-const optionItemStyle = {
-  color: '#1890ff',
-  margin: '.5rem',
-  paddingLeft: '.5rem',
-  paddingRight: '.5rem',
-}
-
 function LandingPage() {
-
-  const { isAuthenticated } = useAuth0();
-
   return (
-    <div style={heroSection}>
-      <div>
-        <div style={heroTextStyle}>
-          <Title level={1} style={titleStyle}>Your Job Search. Optimized.</Title>
-          <Text style={textStyle}>WenJobs gives you the tools to find in-network Web3 opportunities and identify the connections that can help you land your next role.</Text>
-        </div>
-        {
-          isAuthenticated ?
-            <div style={optionStyle}>
-              <Text>Search By:</Text>
+    <>
+      <div className='container'>
 
-              <Link style={optionItemStyle} to='/Companies'>Companies</Link>
-              <Link style={optionItemStyle} to='/Roles'>Roles</Link>
-              <Link style={optionItemStyle} to='/Connections'>Connections</Link>
-
-
-            </div> :
-            null
-        }
+        <Row justify="space-around"
+          align="middle"
+          gutter={{ xs: 20, sm: 16, md: 24, lg: 32 }}
+          className='row'>
+          <Col xs={24} sm={24} md={24} lg={12} xl={12} className='col'>
+            <Title className='hero-title'>Your Job Search. Optimized.</Title>
+            <Text className='text'>WenJobs gives you the tools to find in-network Web3 opportunities and identify the connections that can help you land your next role.</Text>
+          </Col>
+          <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+            <Image
+              src={hero}
+              preview={false}
+            />
+          </Col>
+        </Row>
       </div>
-      <Image
-        width={700}
-        src='https://img.freepik.com/free-vector/successful-partnership-negotiation-partners-handshaking_335657-2453.jpg?w=740&t=st=1669081435~exp=1669082035~hmac=8059dd027dd3c834df7a452354f321fc5246ad57438168f79ce47c195da8079c'
-        preview={false}
-      />
-    </div>
+    </>
   )
 }
 

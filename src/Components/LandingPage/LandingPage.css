@@ -1,0 +1,28 @@
+.container {
+  height: 80vh;
+  display: flex;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 4em,
+}
+
+.text {
+  font-size: 1.25em,
+}
+
+.row {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.col {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
