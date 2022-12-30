@@ -278,6 +278,16 @@ function RoleTable() {
     let jobsQuery = documentSnapshots.docs.map(doc => doc.data());
     let lastQueryItem = documentSnapshots.docs[documentSnapshots.docs.length - 1];
 
+    jobsQuery.forEach((job, index) => {
+      if (companyData.has(job.company)) {
+        console.log(companyData.get(job.company))
+        job.connectionsData = companyData.get(job.company);
+      }
+      else {
+        job.connectionsData = 0
+      }
+    })
+
     //setting results in redux state
     dispatch(setJobs([...jobsData, ...jobsQuery]));
     setLastVisible(lastQueryItem);
